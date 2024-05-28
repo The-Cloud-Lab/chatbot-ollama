@@ -382,6 +382,7 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
                   >
                     <IconSettings size={18} />
                   </button>
+                  
                   <button
                     className="ml-2 cursor-pointer hover:opacity-50"
                     onClick={onClearAll}

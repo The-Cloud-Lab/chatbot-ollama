@@ -1,4 +1,4 @@
-import { IconFileExport, IconSettings } from '@tabler/icons-react';
+import { IconFileExport, IconSettings,IconDoorExit } from '@tabler/icons-react';
 import { useContext, useState } from 'react';
 
 import { useTranslation } from 'next-i18next';
@@ -30,6 +30,10 @@ export const ChatbarSettings = () => {
     handleExportData,
   } = useContext(ChatbarContext);
 
+  const  goBackToReactApp=()=> {
+    window.location.href = 'http://localhost:5173/dashboard'; 
+  }
+
   return (
     <div className="flex flex-col items-center space-y-1 border-t border-white/20 pt-1 text-sm">
       {conversations.length > 0 ? (
@@ -48,6 +52,11 @@ export const ChatbarSettings = () => {
         text={t('Settings')}
         icon={<IconSettings size={18} />}
         onClick={() => setIsSettingDialog(true)}
+      />
+       <SidebarButton
+        text={t('EndChat')}
+        icon={<IconDoorExit size={18}/>}
+        onClick={() => goBackToReactApp()}
       />
 
       <SettingDialog
